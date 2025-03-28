@@ -1,0 +1,14 @@
+.hide {
+    display: none;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.master-grid {
+    display:flex;
+    min-height: 100vh;
+    justify-content: center;
+}

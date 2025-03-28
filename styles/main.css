@@ -2,13 +2,12 @@
     display: none;
 }
 
-h1 {
+header {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-.master-grid {
-    display:flex;
-    min-height: 100vh;
-    justify-content: center;
+p {
+    font-family: Roboto, sans-serif;
 }

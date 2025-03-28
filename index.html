@@ -12,9 +12,41 @@
 <body>
     <header>
         <h1>Mastermind</h1>
+        <p> Mastermind is a code-breaking game for two players. One player (the codemaker) creates a secret
+            code, and the other player (the codebreaker) must guess the code in a set number of turns.
+            <br><br>
+        </p>
+        <p>How to Play:
+            <br>
+        </p>
+        <ul>
+            <li>The codemaker secretly selects a 4-color code using a combination of 6 different colors. The colors can
+                repeat.</li>
+            <li>The codebreaker has 10-12 chances to guess the correct color sequence.</li>
+            <li>After each guess, the codemaker provides feedback:</li>
+            <ul>
+                <li>A red peg indicates a correct color in the correct position.</li>
+
+                <li>A white peg indicates a correct color, but in the wrong position.</li>
+
+                <li>No peg means the guessed color is not part of the code at all.</li>
+            </ul>
+            <li>The codebreaker continues guessing until they either:</li>
+            <ul>
+                <li>Crack the code by getting all four colors in the correct positions.</li>
+
+                <li>Run out of guesses without solving the code, in which case the game ends, and the codemaker wins.
+                </li>
+
+                <li>After the game ends, the option to restart the game is available to try again with a new secret
+                    code.</li>
+            </ul>
+            </li>
+        </ul>
     </header>
     <main class="master-grid">
         <section id="master-gameboard">
+
         </section>
         <section id="play-again" class="hide">
             <button id="play-again-button">Play Again</button>

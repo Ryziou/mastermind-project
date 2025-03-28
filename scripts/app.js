@@ -53,25 +53,27 @@
 /*-------------- Constants -------------*/
 const MASTERROWS = 10
 const MASTERCOLUMNS = 4
-const TOTALGRID = MASTERCOLUMNS + MASTERROWS
 const COLOURS = ['red', 'blue', 'green', 'black', 'yellow', 'pink']
-const PLAYAGAINBTN = document.querySelector('#play-again')
 const FEEDBACK = ['red', 'white']
+const FEEDBACKGRID = 4
+const TOTALFEEDBACKGRID = MASTERROWS * FEEDBACKGRID
 
 /*---------- Variables (state) ---------*/
 
 
 /*----- Cached Element References  -----*/
+const PLAYAGAINBTN = document.querySelector('#play-again')
 
 
 /*-------------- Functions -------------*/
 
 function decodingBoard() {
-    for (let index = 0; index < TOTALGRID; index++) {
-        const grid = document.createElement('div');
-        
-    }
+
+
+
 }
+decodingBoard()
+
 
 function resetGame() {
 

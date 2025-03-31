@@ -60,25 +60,100 @@ const TOTALFEEDBACKGRID = MASTERROWS * FEEDBACKGRID
 
 /*---------- Variables (state) ---------*/
 
+let colourPegSelected 
+let selectedPeg
+let secretCodeAnswer = []
 
 /*----- Cached Element References  -----*/
-const PLAYAGAINBTN = document.querySelector('#play-again')
-
+const PLAYAGAINBTN = document.querySelector('#play-again-button')
+const STARTGAMEEL = document.querySelector('#start-game-again')
+const TITLEDES = document.querySelector('#title-description')
+const DECODINGBOARD = document.querySelector('#master-gameboard')
+const COLOURPEGS = document.querySelector('#colour-pegs')
+const SECRETCODE = document.querySelector('#secret-code')
+const SECRETCODECONTAINER = document.querySelector('#secret-code-pegs')
 
 /*-------------- Functions -------------*/
 
 function decodingBoard() {
+    colouredBtns();
+
+    for (let irow = 0; irow < MASTERROWS; irow++) {
+        const GAMEROW = document.createElement('div');
+        GAMEROW.classList.add('decodingboard-row');
 
 
+        for (let icolumn = 0; icolumn < MASTERCOLUMNS; icolumn++) {
+            const GAMECOLUMN = document.createElement('div');
+            GAMECOLUMN.classList.add('decodingboard-column');
+            GAMEROW.appendChild(GAMECOLUMN);
+        }
+        DECODINGBOARD.appendChild(GAMEROW);
+    }
+
+        document.querySelectorAll('.decodingboard-column').forEach(column => {
+            column.addEventListener('click', clickedPeg);
+        });
+}
+
+function generateSecretCode() {
+    secretCodeAnswer = [];
+    SECRETCODECONTAINER.innerHTML = '';
+
+    for (let secret = 0; secret < MASTERCOLUMNS; secret++) {
+        const randomSecretCode = COLOURS[Math.floor(Math.random() * COLOURS.length)];
+        secretCodeAnswer.push(randomSecretCode);
+
+        const secretCodePeg = document.createElement('div');
+        secretCodePeg.classList.add('colour-answer');
+        secretCodePeg.style.backgroundColor = randomSecretCode;
+        SECRETCODECONTAINER.appendChild(secretCodePeg);
+        
+    }
+}
+
+function colouredBtns() {
+    COLOURS.forEach(colour => {
+        const COLOURBTNS = document.createElement('div');
+        COLOURBTNS.classList.add('colour-btn');
+        COLOURBTNS.style.backgroundColor = colour;
+
+        COLOURBTNS.addEventListener('click', () => {
+            colourPegSelected = colour;
+            selectedPeg = COLOURBTNS;
+            COLOURBTNS.classList.add('selected');
+        })
+            COLOURPEGS.appendChild(COLOURBTNS);
+    })
+}
+
+function clickedPeg(event) {
+    if (colourPegSelected) {
+        event.target.style.backgroundColor = colourPegSelected;
+        event.target.classList.add('filled');
+        selectedPeg.classList.remove('selected');
+        selectedPeg = null;
+        colourPegSelected = null;
+    }
+}
+
+function startGame() {
+    STARTGAMEEL.classList.add('hide');
+    TITLEDES.classList.add('hide');
+    SECRETCODE.classList.remove('hide')
+    DECODINGBOARD.classList.remove('hide')
+    COLOURPEGS.classList.remove('hide')
+    decodingBoard()
+    generateSecretCode()
 
 }
-decodingBoard()
-
 
 function resetGame() {
 
 }
 
+
 /*----------- Event Listeners ----------*/
 
-PLAYAGAINBTN.addEventListener('click', resetGame())
+PLAYAGAINBTN.addEventListener('click', resetGame)
+STARTGAMEEL.addEventListener('click', startGame)

@@ -10,20 +10,16 @@
 </head>
 
 <body>
-    <header>
+    <header id="title-description">
         <h1>Mastermind</h1>
-        <p> Mastermind is a code-breaking game for two players. One player (the codemaker) creates a secret
-            code, and the other player (the codebreaker) must guess the code in a set number of turns.
-            <br><br>
-        </p>
-        <p>How to Play:
-            <br>
+        <p>This mastermind version is a code-breaking game for one player. The computer will create a secret
+            code, and the player must guess the code in a set number of turns.
         </p>
         <ul>
-            <li>The codemaker secretly selects a 4-color code using a combination of 6 different colors. The colors can
+            <li>The computer will select a 4-color code using a combination of 6 different colors. The colors can
                 repeat.</li>
-            <li>The codebreaker has 10-12 chances to guess the correct color sequence.</li>
-            <li>After each guess, the codemaker provides feedback:</li>
+            <li>The player has 12 chances to guess the correct color sequence.</li>
+            <li>After each guess, the computer provides feedback:</li>
             <ul>
                 <li>A red peg indicates a correct color in the correct position.</li>
 
@@ -31,11 +27,11 @@
 
                 <li>No peg means the guessed color is not part of the code at all.</li>
             </ul>
-            <li>The codebreaker continues guessing until they either:</li>
+            <li>The player continues guessing until they either:</li>
             <ul>
                 <li>Crack the code by getting all four colors in the correct positions.</li>
 
-                <li>Run out of guesses without solving the code, in which case the game ends, and the codemaker wins.
+                <li>Run out of guesses without solving the code, in which case the game ends, and the computer wins.
                 </li>
 
                 <li>After the game ends, the option to restart the game is available to try again with a new secret
@@ -43,16 +39,23 @@
             </ul>
             </li>
         </ul>
+        <section id="start-game">
+            <button id="start-game-again">Start Game</button>
+        </section>
     </header>
-    <main class="master-grid">
-        <section id="master-gameboard">
-
-        </section>
-        <section id="play-again" class="hide">
-            <button id="play-again-button">Play Again</button>
-        </section>
-    </main>
-
+    <div id="gameboard-container">
+            <section id="secret-code" class="hide">
+                <h2>Secret Code</h2>
+                <div id="secret-code-pegs" class="hide"></div>
+            </section>
+            <section id="master-gameboard" class="hide"></section>
+            <section id="feedback-pegs" class="hide"></section>
+            <section id="colour-pegs" class="hide"></section>
+            <section id="play-again" class="hide">
+                <button id="play-again-button">Play Again</button>
+            </section>
+        </div>
+    </div>
 </body>
 
 </html>

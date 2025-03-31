@@ -28,12 +28,31 @@ body {
 }
 
 #gameboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: linear-gradient(75deg, #ba5, #ba5);
 }
 
 .selected {
     outline: 3px solid orange;
 }
+
+.feedback-row {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.feedback-column {
+    width: 15px;  
+    height: 15px;
+    border-radius: 50%;
+    background-color: lightgray; 
+    border: 1px solid black; 
+}
+
 
 .colour-answer {
     width: 40px;
@@ -48,7 +67,6 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-bottom: 30px;
 }
 
 #secret-code-pegs {

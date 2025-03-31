@@ -56,13 +56,13 @@ const MASTERCOLUMNS = 4
 const COLOURS = ['red', 'blue', 'green', 'black', 'yellow', 'pink']
 const FEEDBACK = ['red', 'white']
 const FEEDBACKGRID = 4
-const TOTALFEEDBACKGRID = MASTERROWS * FEEDBACKGRID
 
 /*---------- Variables (state) ---------*/
 
-let colourPegSelected 
+let colourPegSelected
 let selectedPeg
 let secretCodeAnswer = []
+let feedbackProgress = []
 
 /*----- Cached Element References  -----*/
 const PLAYAGAINBTN = document.querySelector('#play-again-button')
@@ -72,11 +72,13 @@ const DECODINGBOARD = document.querySelector('#master-gameboard')
 const COLOURPEGS = document.querySelector('#colour-pegs')
 const SECRETCODE = document.querySelector('#secret-code')
 const SECRETCODECONTAINER = document.querySelector('#secret-code-pegs')
+const FEEDBACKCONTAINER = document.querySelector('#feedback-pegs')
 
 /*-------------- Functions -------------*/
 
 function decodingBoard() {
     colouredBtns();
+    generateFeedback();
 
     for (let irow = 0; irow < MASTERROWS; irow++) {
         const GAMEROW = document.createElement('div');
@@ -91,9 +93,28 @@ function decodingBoard() {
         DECODINGBOARD.appendChild(GAMEROW);
     }
 
-        document.querySelectorAll('.decodingboard-column').forEach(column => {
-            column.addEventListener('click', clickedPeg);
-        });
+    document.querySelectorAll('.decodingboard-column').forEach(column => {
+        column.addEventListener('click', clickedPeg);
+    });
+}
+
+function generateFeedback() {
+    feedbackProgress = [];
+    FEEDBACKCONTAINER.innerHTML = '';
+    
+    for (let irow = 0; irow < MASTERROWS; irow++) {
+        const FEEDBACKROW = document.createElement('div');
+        FEEDBACKROW.classList.add('feedback-row');
+
+
+        for (let icolumn = 0; icolumn < FEEDBACKGRID; icolumn++) {
+            const FEEDBACKCOLUMN = document.createElement('div');
+            FEEDBACKCOLUMN.classList.add('feedback-column');
+            FEEDBACKROW.appendChild(FEEDBACKCOLUMN);
+        }
+        FEEDBACKCONTAINER.appendChild(FEEDBACKROW);
+        console.log(FEEDBACKCONTAINER);
+    }
 }
 
 function generateSecretCode() {
@@ -108,7 +129,7 @@ function generateSecretCode() {
         secretCodePeg.classList.add('colour-answer');
         secretCodePeg.style.backgroundColor = randomSecretCode;
         SECRETCODECONTAINER.appendChild(secretCodePeg);
-        
+
     }
 }
 
@@ -123,7 +144,7 @@ function colouredBtns() {
             selectedPeg = COLOURBTNS;
             COLOURBTNS.classList.add('selected');
         })
-            COLOURPEGS.appendChild(COLOURBTNS);
+        COLOURPEGS.appendChild(COLOURBTNS);
     })
 }
 
@@ -143,6 +164,7 @@ function startGame() {
     SECRETCODE.classList.remove('hide')
     DECODINGBOARD.classList.remove('hide')
     COLOURPEGS.classList.remove('hide')
+    FEEDBACKCONTAINER.classList.remove('hide')
     decodingBoard()
     generateSecretCode()
 

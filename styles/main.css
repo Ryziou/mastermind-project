@@ -19,7 +19,6 @@ header {
 }
 
 body {
-    /* border: 1px solid grey; */
     box-shadow: 5px 10px 8px lightgrey;
     width: 500px;
     height: 600px;
@@ -32,27 +31,60 @@ body {
     flex-direction: column;
     align-items: center;
     background: linear-gradient(75deg, #ba5, #ba5);
+    /* width: 100%; */
 }
 
 .selected {
     outline: 3px solid orange;
 }
 
-.feedback-row {
+#game-area {
     display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#main-board-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 5px;
+    padding: 10px;
+}
+
+.game-row {
+    display: flex;
+    align-items: center;
     justify-content: center;
     margin-bottom: 5px;
 }
 
-.feedback-column {
-    width: 15px;  
-    height: 15px;
-    border-radius: 50%;
-    background-color: lightgray; 
-    border: 1px solid black; 
+.container-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    width: 100%;
 }
 
+.feedback-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2px;
+    width: 40px;
+    height: 40px;
+}
+
+.feedback-column {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: lightgray;
+    border: 1px solid black;
+}
 
 .colour-answer {
     width: 40px;
@@ -88,17 +120,10 @@ body {
     border: 2px solid black;
 }
 
-
-#master-gameboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-}
-
 .decodingboard-row {
     display: flex;
     gap: 5px;
+    margin-right: 20px;
 }
 
 .decodingboard-column {
@@ -106,7 +131,7 @@ body {
     height: 40px;
     background-color: lightgray;
     border: 1px solid black;
-    border-radius: 50%
+    border-radius: 50%;
 }
 
 #start-game {

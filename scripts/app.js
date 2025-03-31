@@ -68,53 +68,47 @@ let feedbackProgress = []
 const PLAYAGAINBTN = document.querySelector('#play-again-button')
 const STARTGAMEEL = document.querySelector('#start-game-again')
 const TITLEDES = document.querySelector('#title-description')
-const DECODINGBOARD = document.querySelector('#master-gameboard')
+const DECODINGBOARD = document.querySelector('#main-board-container')
 const COLOURPEGS = document.querySelector('#colour-pegs')
 const SECRETCODE = document.querySelector('#secret-code')
 const SECRETCODECONTAINER = document.querySelector('#secret-code-pegs')
-const FEEDBACKCONTAINER = document.querySelector('#feedback-pegs')
 
 /*-------------- Functions -------------*/
 
 function decodingBoard() {
     colouredBtns();
-    generateFeedback();
+    DECODINGBOARD.innerHTML = '';
 
     for (let irow = 0; irow < MASTERROWS; irow++) {
+        const CONTAINERROW = document.createElement('div');
+        CONTAINERROW.classList.add('container-row')
+
         const GAMEROW = document.createElement('div');
         GAMEROW.classList.add('decodingboard-row');
-
 
         for (let icolumn = 0; icolumn < MASTERCOLUMNS; icolumn++) {
             const GAMECOLUMN = document.createElement('div');
             GAMECOLUMN.classList.add('decodingboard-column');
             GAMEROW.appendChild(GAMECOLUMN);
         }
-        DECODINGBOARD.appendChild(GAMEROW);
+
+        const FEEDBACKCONTAINER = document.createElement('div');
+        FEEDBACKCONTAINER.classList.add('feedback-container');
+        
+        for (let i = 0; i < FEEDBACKGRID; i++) {
+            const FEEDBACKCOLUMN = document.createElement('div');
+            FEEDBACKCOLUMN.classList.add('feedback-column');
+            FEEDBACKCONTAINER.appendChild(FEEDBACKCOLUMN);
+        }
+
+        CONTAINERROW.appendChild(GAMEROW);
+        CONTAINERROW.appendChild(FEEDBACKCONTAINER);
+        DECODINGBOARD.appendChild(CONTAINERROW);
     }
 
     document.querySelectorAll('.decodingboard-column').forEach(column => {
         column.addEventListener('click', clickedPeg);
     });
-}
-
-function generateFeedback() {
-    feedbackProgress = [];
-    FEEDBACKCONTAINER.innerHTML = '';
-    
-    for (let irow = 0; irow < MASTERROWS; irow++) {
-        const FEEDBACKROW = document.createElement('div');
-        FEEDBACKROW.classList.add('feedback-row');
-
-
-        for (let icolumn = 0; icolumn < FEEDBACKGRID; icolumn++) {
-            const FEEDBACKCOLUMN = document.createElement('div');
-            FEEDBACKCOLUMN.classList.add('feedback-column');
-            FEEDBACKROW.appendChild(FEEDBACKCOLUMN);
-        }
-        FEEDBACKCONTAINER.appendChild(FEEDBACKROW);
-        console.log(FEEDBACKCONTAINER);
-    }
 }
 
 function generateSecretCode() {
@@ -164,7 +158,6 @@ function startGame() {
     SECRETCODE.classList.remove('hide')
     DECODINGBOARD.classList.remove('hide')
     COLOURPEGS.classList.remove('hide')
-    FEEDBACKCONTAINER.classList.remove('hide')
     decodingBoard()
     generateSecretCode()
 

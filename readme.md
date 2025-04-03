@@ -29,6 +29,13 @@ This project started on 31/03/2025 and I have worked solo on this. It was comple
     - Zsh (Z Shell) + Oh My Zsh
     - Git
     - Node.js & npm
+### External websites used for researching or use
+[Google]([url](https://www.google.com/))
+[MDN Web Docs]([url](https://developer.mozilla.org/en-US/))
+[W3Schools]([url](https://www.w3schools.com/))
+[Stack Overflow]([url](https://stackoverflow.com/))
+[Free Sounds]([url](https://freesound.org/))
+[Pixabay]([url](https://pixabay.com/))
 
 ## Brief
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="./scripts/app.js"></script>
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="icon" type="./images/favicon.png" href="./images/favicon.png">
     <title>Mastermind</title>
 </head>
 
@@ -18,7 +19,7 @@
         <ul>
             <li>The computer will select a 4-color code using a combination of 6 different colors. The colors can
                 repeat.</li>
-            <li>The player has 12 chances to guess the correct color sequence.</li>
+            <li>The player has 10 chances to guess the correct color sequence.</li>
             <li>After each guess, the computer provides feedback:</li>
             <ul>
                 <li>A red peg indicates a correct color in the correct position.</li>
@@ -43,20 +44,16 @@
             <button id="start-game-again">Start Game</button>
         </section>
     </header>
-    <div id="gameboard-container">
+    <div id="gameboard-container" class="hide">
         <section id="secret-code" class="hide">
             <h2>Secret Code</h2>
             <div id="secret-code-pegs"></div>
         </section>
         <div id="game-area">
             <div id="main-board-container" class="hide">
-
             </div>
         </div>
         <section id="colour-pegs" class="hide"></section>
-        <section id="play-again" class="hide">
-            <button id="play-again-button">Play Again</button>
-        </section>
     </div>
     </div>
 </body>

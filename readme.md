@@ -30,12 +30,14 @@ This project started on 31/03/2025 and I have worked solo on this. It was comple
     - Git
     - Node.js & npm
 ### External websites used for researching or use
-[Google]([url](https://www.google.com/))
-[MDN Web Docs]([url](https://developer.mozilla.org/en-US/))
-[W3Schools]([url](https://www.w3schools.com/))
-[Stack Overflow]([url](https://stackoverflow.com/))
-[Free Sounds]([url](https://freesound.org/))
-[Pixabay]([url](https://pixabay.com/))
+#### Researching
+[Google](https://www.google.com/)  
+[MDN Web Docs](https://developer.mozilla.org/en-US/)  
+[W3Schools](https://www.w3schools.com/)  
+[Stack Overflow](https://stackoverflow.com/)  
+#### Audio/SFX
+[Free Sounds](https://freesound.org/)  
+[Pixabay](https://pixabay.com/)
 
 ## Brief
 

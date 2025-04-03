@@ -47,7 +47,7 @@ This project started on 31/03/2025 and I have worked solo on this. It was comple
 ## Planning
 
 ### Wireframe
-![Mastermind Wireframe](image_url) 
+![Mastermind Wireframe](https://github.com/Ryziou/mastermind-project/blob/main/Wireframe.png) 
 ```js
 // * Pseudocode for Mastermind
 

@@ -6,7 +6,7 @@ This is a browser-based game on the classic code-breaking game called Mastermind
 
 ## Deployment link
 
-<LINK>
+[You can play it here.](https://ryziou.github.io/mastermind-project/)
 
 ## Getting Started/Code Installation
 

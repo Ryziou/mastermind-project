@@ -158,6 +158,10 @@ This project started on 31/03/2025 and I have worked solo on this. It was comple
 One of the core sections was attempting to generate the game board grid by utilising JavaScript rather than hard coding it into HTML.
 
 ```js
+const MASTERROWS = 10
+const MASTERCOLUMNS = 4
+const DECODINGBOARD = document.querySelector('#main-board-container')
+
 function decodingBoard() {
     colouredBtns(); // Points towards the colour buttons and to place them in the board.
     DECODINGBOARD.innerHTML = '';
@@ -185,6 +189,8 @@ This method allowed me to have more flexibility in managing the game state and a
 For the secret code, I implemented a computerised generation so that the colours would be randomised and different every time the player attempts to play the game. It will choose colours from the available options in a global array.
 ```js
 const COLOURS = ['red', 'blue', 'green', 'black', 'yellow', 'pink', 'orange', 'purple', 'white']
+let secretCodeAnswer = []
+const SECRETCODECONTAINER = document.querySelector('#secret-code-pegs')
 
 function generateSecretCode() {
     secretCodeAnswer = []; // Grabs the global array.

@@ -293,22 +293,22 @@ Successfully implementing the colour matching checker was a significant accompli
 
 By always nulling the counter after every time a red/white peg has been found, it would stop the player from cheating by spamming duplicate colours.
 
-    - The first pass identifies exact matches (same colour and same position) and then increases the red peg counter by 1 each time.
-    - The second pass identifies colour matches (same colour and NOT same position) and then increases the white peg counter by 1 each time.
-    - The nullifier would then delete the copied array each time to prevent double-counting.
+1. The first pass identifies exact matches (same colour and same position) and then increases the red peg counter by 1 each time.
+2. The second pass identifies colour matches (same colour and NOT same position) and then increases the white peg counter by 1 each time.
+3. The nullifier would then delete the copied array each time to prevent double-counting.
 This approach will handle scenarios like where the player picks multiple pegs of the same colour and will provide the correct feedback.
 
 ## Key Learnings/Takeaways
 
 This project has deepened my understanding of DOM manipulation and event handling in JavaScript. 
     
-    - Using JavaScript to build the entire game board taught me more on how to create, modify, and manage DOM elements.
-    - More undertanding of event listeners.
-    - The implementation of SFX and CSS styling for easy visual representations of what does what.
-    - Pseudocode. I wrote a better detailed version for the first time after only learning about it. It helped me see the importance of planning game logic before coding and it did help me figure out what I need to do while I was building this project.
-    - I have learnt about User Stories and I have realised that they are a great importance to planning too. 
-        - They focus on what the user/player needs
-        - Simple and concise descriptions for what the user/player needs and why
+- Using JavaScript to build the entire game board taught me more on how to create, modify, and manage DOM elements.
+- More undertanding of event listeners.
+- The implementation of SFX and CSS styling for easy visual representations of what does what.
+- Pseudocode. I wrote a better detailed version for the first time after only learning about it. It helped me see the importance of planning game logic before coding and it did help me figure out what I need to do while I was building this project.
+- I have learnt about User Stories and I have realised that they are a great importance to planning too. 
+  - They focus on what the user/player needs
+  - Simple and concise descriptions for what the user/player needs and why
 User stories are unfortunately very brief with their descriptions but that is what they're for. They are made to allow the team to focus on what is most important for the user/player and allows them to prioritise high-impact features first.
 
 

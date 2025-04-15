@@ -27,7 +27,6 @@ This project started on 31/03/2025 and I have worked solo on this. It was comple
     - Git & GitHub
     - Windows Subsystem for Linux (WSL) with Ubuntu
     - Zsh (Z Shell) + Oh My Zsh
-    - Git
     - Node.js & npm
 ### External websites used for researching or use
 #### Researching
